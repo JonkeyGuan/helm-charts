@@ -14,7 +14,7 @@ appVersion: "2.8.1"
 icon: https://avatars.githubusercontent.com/u/39938107
 
 dependencies:
-  - name: "postgrescluster"
+  - name: "crunchy-postgres"
     version: "0.2.2"
     repository: "https://jonkeyguan.github.io/helm-charts/"
     condition: crunchyPostgres.enabled
