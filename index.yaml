@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  crunchy-postgres:
+  - apiVersion: v2
+    appVersion: 5.0.5
+    created: "2023-11-27T13:18:53.829690572Z"
+    description: A Helm chart for deploying Postgres using the Crunchy Operator
+    digest: fdcd6504de25a80423fe49164db33800c7bd9faa519d932487ec6ec1bb742a37
+    name: crunchy-postgres
+    type: application
+    urls:
+    - https://github.com/JonkeyGuan/helm-charts/releases/download/crunchy-postgres-0.2.2/crunchy-postgres-0.2.2.tgz
+    version: 0.2.2
   nginx:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://github.com/JonkeyGuan/helm-charts/releases/download/nginx-0.3.0/nginx-0.3.0.tgz
     version: 0.3.0
-generated: "2023-11-27T13:06:35.064518619Z"
+generated: "2023-11-27T13:18:53.829742479Z"
