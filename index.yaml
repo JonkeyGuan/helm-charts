@@ -14,6 +14,26 @@ entries:
   mlflow-server:
   - apiVersion: v2
     appVersion: 2.8.1
+    created: "2023-11-29T03:28:05.419735747Z"
+    dependencies:
+    - condition: crunchyPostgres.enabled
+      name: crunchy-postgres
+      repository: https://jonkeyguan.github.io/helm-charts/
+      version: 0.2.2
+    description: A Helm chart for deploying mlflow on OpenShift
+    digest: cf1ca7c35d9c3e076f3c1372464daaa812fa0e1708c6f6fa74ac23c9a8253eba
+    icon: https://avatars.githubusercontent.com/u/39938107
+    kubeVersion: '>= 1.21.0'
+    name: mlflow-server
+    sources:
+    - https://github.com/JonkeyGuan/JonkeyGuan.github.io/tree/main/helm-charts/mlflow-server
+    - https://github.com/jonkeyguan/mlflow-server
+    type: application
+    urls:
+    - https://github.com/JonkeyGuan/helm-charts/releases/download/mlflow-server-0.6.3/mlflow-server-0.6.3.tgz
+    version: 0.6.3
+  - apiVersion: v2
+    appVersion: 2.8.1
     created: "2023-11-27T13:23:06.025169122Z"
     dependencies:
     - condition: crunchyPostgres.enabled
@@ -43,4 +63,4 @@ entries:
     urls:
     - https://github.com/JonkeyGuan/helm-charts/releases/download/nginx-0.3.0/nginx-0.3.0.tgz
     version: 0.3.0
-generated: "2023-11-27T13:23:06.025179792Z"
+generated: "2023-11-29T03:28:05.419748401Z"
