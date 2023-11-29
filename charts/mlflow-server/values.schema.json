@@ -22,7 +22,8 @@
         "service",
         "serviceAccount",
         "tolerations",
-        "trainingTestImage"
+        "trainingTestImage",
+        "customize"
       ],
     "properties": {
         "affinity": {
@@ -364,6 +365,29 @@
                 "tag": {
                     "type": "string",
                     "pattern": "^[a-zA-Z0-9-_.]*$"
+                }
+            }
+        },
+        "customize": {
+            "type": "object",
+            "required": [
+                "enabled",
+                "workersCount",
+                "timeout",
+                "threads"
+            ],
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "workersCount": {
+                    "type": "integer"
+                },
+                "timeout": {
+                    "type": "integer"
+                },
+                "threads": {
+                    "type": "integer"
                 }
             }
         }

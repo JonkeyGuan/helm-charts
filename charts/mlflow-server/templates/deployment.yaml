@@ -10,6 +10,7 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
+  
   selector:
     matchLabels:
       {{- include "mlflow-server.selectorLabels" . | nindent 6 }}
@@ -40,14 +41,12 @@ spec:
               containerPort: 8080
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /health
+            tcpSocket:
               port: mlflow-server
           readinessProbe:
-            httpGet:
-              path: /health
+            tcpSocket:
               port: mlflow-server
-            initialDelaySeconds: 30
+            initialDelaySeconds: 15
           env:
             - name: AWS_ACCESS_KEY_ID
               valueFrom:
@@ -117,6 +116,12 @@ spec:
             {{- end }}
             - name: MLFLOW_PORT
               value: '8080'
+            {{ if .Values.customize.enabled }}
+            - name: MLFLOW_WORKERS
+              value: "{{ .Values.customize.workersCount }}"
+            - name: MLFLOW_GUNICORN_OPTS
+              value: "--timeout={{ .Values.customize.timeout }} --threads={{ .Values.customize.threads }}"
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
         {{- if .Values.openshiftOauth.enabled }}

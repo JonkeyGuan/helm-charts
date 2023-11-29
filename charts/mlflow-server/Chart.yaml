@@ -8,7 +8,7 @@ sources:
   - https://github.com/JonkeyGuan/JonkeyGuan.github.io/tree/main/helm-charts/mlflow-server
   - https://github.com/jonkeyguan/mlflow-server
 
-version: 0.6.2
+version: 0.6.3
 appVersion: "2.8.1"
 
 icon: https://avatars.githubusercontent.com/u/39938107

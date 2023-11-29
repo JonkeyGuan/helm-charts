@@ -2,7 +2,7 @@
 
 A Helm chart for deploying mlflow on OpenShift
 
-![Version: 0.6.2](https://img.shields.io/badge/Version-0.6.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.8.1](https://img.shields.io/badge/AppVersion-2.8.1-informational?style=flat-square)
+![Version: 0.6.3](https://img.shields.io/badge/Version-0.6.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.8.1](https://img.shields.io/badge/AppVersion-2.8.1-informational?style=flat-square)
 
 ## Pre-Reqs
 
@@ -32,7 +32,7 @@ appVersion: "1.16.0"
 
 dependencies:
   - name: "mlflow-server"
-    version: "0.6.2"
+    version: "0.6.3"
     repository: "https://jonkeyguan.github.io/helm-charts/"
 ```
 
@@ -47,7 +47,7 @@ Kubernetes: `>= 1.21.0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://jonkeyguan.github.io/helm-charts/ | postgrescluster | 0.2.2 |
+| https://jonkeyguan.github.io/helm-charts/ | crunchy-postgres | 0.2.2 |
 
 ## Values
 
@@ -59,6 +59,10 @@ Kubernetes: `>= 1.21.0`
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | crunchyPostgres.enabled | bool | `true` | Enable creation of a postgres instance using crunchyPostgres operator |
+| customize.enabled | bool | `false` |  |
+| customize.threads | int | `1` |  |
+| customize.timeout | int | `60` |  |
+| customize.workersCount | int | `4` |  |
 | database.migration.enabled | bool | `false` |  |
 | fullnameOverride | string | `""` | String to fully override fullname template |
 | image.pullPolicy | string | `"IfNotPresent"` | The docker image pull policy |
